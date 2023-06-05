@@ -54,6 +54,8 @@
     --z-fixed: 1;
     --z-modal: 2;
   }
+
+  
   
   @media screen and (min-width: 992px) {
     :root {
@@ -231,11 +233,12 @@
       color: var(--primary-color);
   }
   
-  @media (max-width: 768px) {
-      .nav_menu{
+  @media screen and (max-width: 768px) {
+    
+    .nav_menu{
           position: fixed;
           bottom: var(--header-height);
-          left: 0%;
+          left:  -100%;
           width: 100%;
           height: calc(max-content - var(--header-height));
           padding: var(--sp-3) 0 var(--sp-2);
@@ -243,7 +246,20 @@
           z-index: var(--z-fixed);
           transition: left .5s ease-in-out;
       }
+     
+      .arrow{
+        left:0;
+      }
+     
+    
+    
   }
+
+
+
+ 
+ 
+
   
   .nav_menu .btn--close {
       position: absolute;
@@ -326,3 +342,4 @@
       opacity: 1;
       visibility: visible;
   }
+
