@@ -55,7 +55,19 @@
     --z-modal: 2;
   }
 
-  
+  .dark_theme{
+    --primary-color: hsl(354, 48%, 83%);
+    --body-color: hsl(0, 5%, 29%);
+    --text-color: hsl(0, 96%, 11%);
+    --title-color: hsl(0, 93%, 5%);
+    --bg-color: hsl(0, 81%, 44%);
+    --card-color: hsl(0, 13%, 81%);
+   /* transition: all 1s ease-in;*/
+   transition: background-color  1s ease-in-out;
+   .header{
+   transition: background-color 1s ease-in-out;
+   }
+  }
   
   @media screen and (min-width: 992px) {
     :root {
@@ -246,15 +258,34 @@
           z-index: var(--z-fixed);
           transition: left .5s ease-in-out;
       }
-     
+
       .arrow{
         left:0;
       }
-     
-    
-    
   }
 
+  @media screen and (min-width: 769px) {
+    .nav_menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+  
+   .nav_buttons {
+    display: flex;
+    flex-wrap: wrap;
+   }
+
+  .btn--menu,
+  .btn--close{
+    visibility: hidden;
+  }
+
+  
+  }
+  
 
 
  
@@ -312,7 +343,21 @@
   .btn--menu:hover{
       transform: scale(1.1);
   }
-  
+ 
+
+.rot:hover{
+animation: rotation 1s  ease-in-out ; 
+}
+
+@keyframes rotation {
+  0%{
+   transform: rotate(1.8turn);
+  }
+  100%{
+transform: rotate(.8turn);
+  }
+}
+
   .notify {
       position: absolute;
       top: -5px;
@@ -342,4 +387,6 @@
       opacity: 1;
       visibility: visible;
   }
+
+
 
