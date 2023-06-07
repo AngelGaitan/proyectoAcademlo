@@ -389,4 +389,50 @@ transform: rotate(.8turn);
   }
 
 
+/* carrito por ahora comentado luego se edita con java script */
+
+.cart {
+  position: fixed;
+  bottom: var(--header-height);
+  right: -100%;
+  max-width: 375px;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--bg-color);
+  z-index: var(--z-fixed);
+  transition: right .5s ease-in-out;
+}
+
+/* main card products presentation  */
+
+.container_desc{
+  background-color: grey;
+  border-radius: 10px;
+  }
+  
+
+.products__container{
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  background-image: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 0 25px hsla(0, 0%, 0%, 10%);
+}
+
+.products__container:hover{
+  transition: transform, backfround-image .1s ease-in-out;
+  transform: scale(1.1);
+  background-image: linear-gradient(rgba(10, 10, 10), rgba(250, 250, 255));
+}
+
+.products__title {
+  margin-bottom: var(--sp-2);
+}
+
+
+
+
+
 
