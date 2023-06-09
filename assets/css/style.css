@@ -404,18 +404,22 @@ transform: rotate(.8turn);
 }
 
 /* main card products presentation  */
+.article {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 1fr;
+  column-gap: var(--sp-1);
+  margin-bottom: var(--sp-1);
+}
  
 .container_desc{
-  background-color: grey;
-  border-radius: 10px;
+   border-radius: 10px;
   }
   
 
 .products__container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 2fr;
   width: 100%;
   height: auto;
   background-image: whitesmoke;
@@ -429,26 +433,67 @@ transform: rotate(.8turn);
   border: 2px solid black;
   border-radius: 10px;
   margin-bottom: 50px;
+  overflow: hidden;
 }
 
-.product:hover{
-  transition: transform, backfround-image .1s ease-in-out;
-  transform: scale(1.1);
+.product img:hover{
+  transition: transform, backfround-image .3s ease-in-out;
+  transform:  translateY(-10px);
   background-image: linear-gradient(rgba(10, 10, 10), rgba(250, 250, 255));
+
 }
 
-.products__title {
-  margin-bottom: var(--sp-2);
+
+
+.product__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: var(--sp-1-5);
+  min-height: auto;
 }
 
-.fila{
+.product__btn {
+  position: absolute;
+  top: 0;
+  right: var(--sp-1-5);
+  width: 45px;
+  height: 45px;
+  background-color: var(--bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  transition: background-color .3s ease-in-out,
+              color .3s ease-in-out;
 }
 
-.product__price{
-  padding-right: 70px;
-  padding-left: 10px;
+.product__btn:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+
+}
+
+
+
+.product__price {
+  margin-left: 0%;
+  grid-column: span 1;
+}
+
+.product__stock {
+  margin-left: 60%;
+  grid-column: span 2;
+}
+
+.product__title {
+  grid-column:  span 3;
+  text-align: center;
 }
 
 
