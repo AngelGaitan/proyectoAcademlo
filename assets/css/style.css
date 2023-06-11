@@ -77,6 +77,17 @@
       --small-font: 1rem;
       --tiny-font: 0.8rem;
     }
+    .products__container{
+      display: grid;
+      position: relative;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      width: 100%;
+      height: auto;
+      background-image: whitesmoke;
+      border-radius: 10px;
+      box-shadow: 0 0 25px hsla(0, 0%, 0%, 10%);
+      gap:20px
+    }
   }
   
   /* === Base === */
@@ -244,8 +255,16 @@
       height: 3rem;
       color: var(--primary-color);
   }
-  
-  @media screen and (max-width: 768px) {
+  @media  screen and (max-width: 450px) {
+    .product{
+      width: 100%;
+      height: 500px;
+    }
+  }
+
+
+
+  @media screen and (min-width: 451px) {
     
     .nav_menu{
           position: fixed;
@@ -278,6 +297,10 @@
       left:0%
     }
       
+    .product{
+      width: 400px;
+      height: 500px;
+    }
   }
 
 
@@ -287,8 +310,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;  
   }
   
    .nav_buttons {
@@ -300,8 +322,20 @@
   .btn--close{
     visibility: hidden;
   }
-
   
+ 
+  
+  .cart {
+    position: fixed;
+    bottom: var(--header-height);
+    left: -100%;
+    max-width: 475px;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-color);
+    z-index: var(--z-fixed);
+    transition: left .5s ease-in-out;
+  }
   }
   
 
@@ -389,8 +423,8 @@ transform: rotate(.8turn);
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      opacity: 0;
-      visibility: hidden;
+      opacity: 1;
+      visibility: visible;
       transition: opacity .3s ease-in-out,
                   visibility .3s ease-in-out;
   }  
@@ -399,7 +433,7 @@ transform: rotate(.8turn);
   .show--menu {
       left: 0;
   }
-  
+  b
   /* show notify */
   .show--notify {
       opacity: 1;
@@ -570,26 +604,52 @@ align-items: center;
 .container_desc{
    border-radius: 10px;
   }
+
+.main{
+  display: flex ;
+  position: relative;
+  width: 100%
+}
   
+.products{
+display: grid;
+width: 100%;
+justify-content: center;
+}
+
+.products__title{
+  justify-content: center;
+  text-align: center;
+}
 
 .products__container{
-  display: grid;
-  grid-template-columns: 2fr;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: auto;
   background-image: whitesmoke;
   border-radius: 10px;
   box-shadow: 0 0 25px hsla(0, 0%, 0%, 10%);
-  padding: 50px;
-  
+ justify-content: center;
+  gap: 20px;
 }
 
 .product{
   border: 2px solid black;
+  width: 300px;
+  height: 480px;
   border-radius: 10px;
   margin-bottom: 50px;
   overflow: hidden;
 }
+
+
+.product__image{
+height: 45%;
+align-items: center;
+}
+
 
 .product img:hover{
   transition: transform, backfround-image .3s ease-in-out;
@@ -597,8 +657,6 @@ align-items: center;
   background-image: linear-gradient(rgba(10, 10, 10), rgba(250, 250, 255));
 
 }
-
-
 
 .product__content {
   position: relative;
@@ -608,6 +666,10 @@ align-items: center;
   background-color: var(--bg-color);
   padding: var(--sp-1-5);
   min-height: auto;
+  top:100px
+}
+.product:hover .product__content{
+  transform: translateY(-100px);
 }
 
 .product__btn {
@@ -637,7 +699,7 @@ align-items: center;
 .prod__container{
   display : grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: repeat(3,auto);
+  grid-template-rows: repeat(7,auto);
   width: 100%;
 }
 
@@ -646,7 +708,12 @@ align-items: center;
   padding: 5px;
 }
 
+.caja1{
+font-size: 16px;
+}
+
 .caja2{
+  font-size: 16px;
   justify-content: flex-end;
 }
 
@@ -656,5 +723,50 @@ align-items: center;
   align-items: center;
   text-align: center;
   grid-column: 1/span2;
+  margin-bottom: 15px;
 }
 
+.name--sizes{
+grid-column: 1/span1;
+
+}
+
+.btn--sizes{
+ grid-column: 1/span1;
+ grid-row: 5/span1;
+ gap: 10px;
+ align-items: center;
+}
+
+.name--color{
+  grid-column: 2/span1;
+  grid-row: 4/span1;
+  margin-left: 20px;
+}
+
+.btn--colors{
+ grid-column: 2/span1;
+ grid-row: 5/span1;
+ gap: 15px;
+ align-items: center;
+ margin-left: 20px;
+}
+
+.boxC{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+}
+
+.red{
+  background-color: red;
+}
+.blue{
+  background-color: blue;
+}
+.black{
+  background-color: black;
+}
+.white{
+  background-color: azure;
+}

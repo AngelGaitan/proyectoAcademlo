@@ -13,7 +13,7 @@
                
                <div class="product__content">
                  <div class="container_desc">
-                 <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
+                 <button onclick=addCart("${product.id}") type="button" class="product__btn add--to--cart" >
                    <i class='bx bx-cart-add'></i>
                  </button>
                  <div class="prod__container">
@@ -23,6 +23,22 @@
                  <div class="caja caja4"><details><summary>descripción del producto</summary>
                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit reprehenderit excepturi, in ipsa sapiente sequi dignissimos qui dolorem necessitatibus fugiat modi corrupti exercitationem suscipit nostrum quibusdam blanditiis quo explicabo deserunt.</p>
                  </details></div>
+                 <div class="caja name-sizes">
+                  <span><h2>Medidas</h2></span>
+                </div>
+                <div class="caja btn--sizes"><button>XS</button>
+                <button>S</button>
+              <button>M</button> 
+              <button>L</button>
+              <button>XL</button>
+               </div>
+               <div class="caja name--color"> <span><h2>Colores</h2></span></div>
+               <div class="caja btn--colors"> 
+                <button class="boxC red"></button>
+                <button class="boxC blue"></button>
+                <button class="boxC black"></button>
+                <button class="boxC white"></button>
+               </div>
                  </div>
                </div>
                </div>
@@ -30,11 +46,25 @@
           }
           productsDom.innerHTML = htmlProduct
      }
+     let carrito = []
+
+let notify = document.querySelector('.notify')
+
+function addCart(id) {
+    let prduct = db.filter(item => {
+        return item.id === id
+    });
+    if(prduct){
+        carrito.push(prduct)
+    }
+    notify.innerHTML = carrito.length
+}
      Prtproducts()
      return {
           db,
           Prtproducts
      }
+     
     }
 
   export default products
