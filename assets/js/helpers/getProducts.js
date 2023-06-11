@@ -1,13 +1,6 @@
-/*export let getProducts = function() {
-    window.fetch('https://ecommercebackend.fundamentos-29.repl.co/')
-    .then((res) => res.json())
-    .then((data) => data)  
-    .catch((err) =>{console.log(err)})
-}
 
-getProducts() */
-
-export  let getProducts =  async () => {
+ function getProducts() {
+    
     
     return window.fetch('https://ecommercebackend.fundamentos-29.repl.co/')
       .then((res) => res.json())
@@ -15,6 +8,6 @@ export  let getProducts =  async () => {
       .catch((err) => {console.log(err)})
   }
   
-   
+   export default getProducts
   
   
