@@ -1,5 +1,5 @@
 
-export let showNotify = function(){
+ let showNotify = function(){
 let carrito = []
 
 let notify = document.querySelector('.notify')
@@ -14,4 +14,4 @@ function addCart(id) {
     notify.innerHTML = carrito.length
 }
 }
-showNotify()
+
