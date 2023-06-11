@@ -1,5 +1,5 @@
 
- export let navM = function (){
+export let navM = function (){
 
 let navMenu = document.querySelector('.nav_menu');
 
@@ -22,4 +22,5 @@ navlink.addEventListener('click', () => {
 })
 }
 navM()
+
 

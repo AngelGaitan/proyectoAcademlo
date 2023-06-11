@@ -258,11 +258,29 @@
           z-index: var(--z-fixed);
           transition: left .5s ease-in-out;
       }
-
       .arrow{
         left:0;
       }
+    
+      .cart {
+        position: fixed;
+        bottom: var(--header-height);
+        left: -100%;
+        max-width: 375px;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background-color: var(--bg-color);
+        z-index: var(--z-fixed);
+        transition: left .5s ease-in-out;
+      }
+
+    .slide{
+      left:0%
+    }
+      
   }
+
+
 
   @media screen and (min-width: 769px) {
     .nav_menu ul{
@@ -393,24 +411,15 @@ animation: rotation .5s  ease-in-out;
 
 /* carrito por ahora comentado luego se edita con java script */
 /* trabjo de la tarjeta para el carro */
-.cart {
-  position: fixed;
-  bottom: var(--header-height);
-  right: -100%;
-  max-width: 375px;
-  width: 100%;
-  height: calc(100vh - var(--header-height));
-  background-color: var(--bg-color);
-  z-index: var(--z-fixed);
-  transition: right .5s ease-in-out;
-}
+
+
 
  /* ======HEADER===== */
 .cart__header{ 
   display: flex;
   margin-top: 20px;
   justify-content: space-between;
-  
+  background-color: var(--primary-color );
 }
 
 .cart__title{ 
@@ -439,6 +448,8 @@ animation: rotation .5s  ease-in-out;
 }
 
 .tarjeta_container{
+  position: relative;
+  top: 10px;
   display: grid;
   grid-template-columns: 100px 120px auto auto;
   grid-template-rows: 1.5fr 0.5fr;
