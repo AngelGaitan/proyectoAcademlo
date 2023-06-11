@@ -115,7 +115,7 @@
     color: var(--text-color);
     background-color: var(--body-color);
   }
-  
+
   h1,
   h2,
   h3,
@@ -377,7 +377,7 @@ animation: rotation .5s  ease-in-out;
       visibility: hidden;
       transition: opacity .3s ease-in-out,
                   visibility .3s ease-in-out;
-  }
+  }  
   
   /* show menu */
   .show--menu {
@@ -392,7 +392,7 @@ animation: rotation .5s  ease-in-out;
 
 
 /* carrito por ahora comentado luego se edita con java script */
-
+/* trabjo de la tarjeta para el carro */
 .cart {
   position: fixed;
   bottom: var(--header-height);
@@ -403,6 +403,150 @@ animation: rotation .5s  ease-in-out;
   background-color: var(--bg-color);
   z-index: var(--z-fixed);
   transition: right .5s ease-in-out;
+}
+
+ /* ======HEADER===== */
+.cart__header{ 
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  
+}
+
+.cart__title{ 
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  padding-left: 10px;
+} 
+ 
+.cart__btn{
+  display: flex;
+  align-items: center;
+}
+
+ /* =====BODY===== */
+ 
+.container-tarjetas{
+  grid-row: 2;
+  overflow-y: scroll;
+}
+.cart__container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15% 65% 20%; /*h, b, f*/
+  height: 100%;
+}
+
+.tarjeta_container{
+  display: grid;
+  grid-template-columns: 100px 120px auto auto;
+  grid-template-rows: 1.5fr 0.5fr;
+  width: 95%;
+  height: 100px;
+  border: 1px dashed black;
+  margin: 0 auto;
+}
+
+.c{
+display: flex;
+}
+
+.imagen_cart{
+grid-column: 1/span1;
+grid-row: 1/span2;
+padding-top: 5px;
+padding-left: 5px;
+align-items: center;
+}
+
+.camisete{
+  width: 90px;
+  height: 90px;
+  border: 1px dashed rgba(195, 182, 182, 0.8);
+}
+
+.product_name{
+
+  justify-content: center;
+  align-items: center;
+  grid-column: 2/span3;
+  grid-row: 1/span1;
+
+}
+
+.product_precio{
+  grid-column: 2/span1;
+  grid-row: 2/span1;
+}
+.symbols{
+  gap: 10px;
+  grid-column:3/span1;
+  grid-row: 2/span1;
+}
+.bx-plus,
+.bx-minus{
+  
+  border: 1px dashed rgb(0, 0, 0);
+}
+.product_trash{
+  justify-content: flex-end;
+  grid-column: 4/span1;
+  grid-row: 2/span1;
+  margin-right: 5px;
+}
+
+/*visibilidad del cart__empty */
+.cart__empty{
+  visibility: hidden;
+}
+
+/* ====FOOTER==== */
+
+.cart__footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row: 3;
+}
+
+.btn--buy{
+  background-color: black;
+  color: rgb(253, 246, 246);  
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  justify-content: center; 
+}
+
+
+.btn--buy:hover{
+  transform: scale(1.1);
+}
+
+.cart__count{
+  padding-top: 16px;
+  padding-left: 10px  ;
+  display: flex;
+  grid-column: 1/span1;
+  grid-row: 1/span1;
+  gap: 10px;
+}
+
+.cart__total{
+  padding-top: 10px;
+  padding-left: 10px;
+   display: flex;
+  grid-column: 1/ span1;
+  grid-row: 2/span1;
+  gap: 10px;
+}
+
+.cart__comprar{
+  display: flex;
+  grid-column: 2/span1;
+  grid-row: 1/span2;
+  align-items: center;
 }
 
 /* main card products presentation  */
@@ -489,48 +633,32 @@ animation: rotation .5s  ease-in-out;
 
 }
 
+.prod__container{
+  display : grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(3,auto);
+  width: 100%;
+}
 
 
-/* .product__price {
+.product__price {
   margin-left: 0%;
   grid-column: span 1;
 }
 
 .product__stock {
-  position: absolute;
+  margin-left: 60%;
   grid-column: span 2;
-  right: 10px;
 }
 
-.product__title {
-  grid-column:  span 3;
-  text-align: center;
-} */
-
-.container_grid{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto auto auto;
-  width: 100%;
-}
-.c{
-  display: flex;
-  padding: 5px;
-  
-}
-.c1{
-  grid-row: 1 / span1;
-}
-.c2{
-  justify-content: flex-end;
-}
-.c3{
-  grid-column: 1 / span2 ;
+.caja3,
+.caja4 {
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
-.c4{
-  grid-column: 1/ span2;
-}
+
+
+
 
 

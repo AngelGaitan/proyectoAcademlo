@@ -95,10 +95,11 @@
                 <button type="button" class="product__btn add--to--cart">
                   <i class='bx bx-cart-add'></i>
                 </button>
-                <span class="product__price fila">$10</span>
-                <span class="product__stock fila">Disponibles: 3</span>
-                <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
-                <details><summary>descripción del producto</summary>
+                <div class="prod__container">
+                 <div class="caja caja1"><span class="product__price fila">$10</span> </div>
+                <div class="caja caja2"><span class="product__stock fila">Disponibles: 3</span></div>
+                <div class="caja caja3"><h3 class="product__title">Camiseta de manga corta con cuello redondo</h3></div>
+                <div class="caja caja4"><details><summary>descripción del producto</summary>
                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit reprehenderit excepturi, in ipsa sapiente sequi dignissimos qui dolorem necessitatibus fugiat modi corrupti exercitationem suscipit nostrum quibusdam blanditiis quo explicabo deserunt.</p>
                 </details>
               </div>
@@ -155,36 +156,6 @@
                 <button type="button" class="product__btn add--to--cart">
                   <i class='bx bx-cart-add'></i>
                 </button>
-                <div class="container_grid">
-                  <div class="c c1">
-                    <span class="product__price">$10</span>
-                  </div>
-                  <div class="c c2">
-                    <span class="product__stock">Disponibles: 3</span>
-                  </div>
-                  <div class="c c3"">
-                    <h3 class="product__title"> este Camiseta de manga corta con cuello redondo</h3>
-                  </div>
-                  <div class="c c4"">
-                    <details><summary>descripción del producto</summary>
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit reprehenderit excepturi, in ipsa sapiente sequi dignissimos qui dolorem necessitatibus fugiat modi corrupti exercitationem suscipit nostrum quibusdam blanditiis quo explicabo deserunt.</p>
-                    </details>
-                  </div>
-                </div>
-              </div>
-              </div>
-            </article>
-
-            <article class="product">
-              <div class="product__image">
-                <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Producto 1">
-              </div>
-              
-              <div class="product__content">
-                <div class="container_desc">
-                <button type="button" class="product__btn add--to--cart">
-                  <i class='bx bx-cart-add'></i>
-                </button>
                 <span class="product__price">$10</span>
                 <span class="product__stock">Disponibles: 3</span>
                 <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
@@ -213,27 +184,10 @@
                 </details>
               </div>
               </div>
-            </article>
-
-            <article class="product">
-              <div class="product__image">
-                <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png" alt="Producto 1">
               </div>
               
-              <div class="product__content">
-                <div class="container_desc">
-                <button type="button" class="product__btn add--to--cart">
-                  <i class='bx bx-cart-add'></i>
-                </button>
-                <span class="product__price">$10</span>
-                <span class="product__stock">Disponibles: 3</span>
-                <h3 class="product__title">Camiseta de manga corta con cuello redondo</h3>
-                <details><summary>descripción del producto</summary>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit reprehenderit excepturi, in ipsa sapiente sequi dignissimos qui dolorem necessitatibus fugiat modi corrupti exercitationem suscipit nostrum quibusdam blanditiis quo explicabo deserunt.</p>
-                </details>
-              </div>
-              </div>
             </article>
+            
           </div>
         </section>
             
@@ -241,18 +195,33 @@
               <!-- cart -->
               <div class="cart">
                 <div class="cart__container">
+                  
                   <div class="cart__header">
-                    <h3 class="cart__title">Carrito de Compras</h3>
-                    <button type="button" class="cart__btn btn--close">
+                    <div class="cart__title"><h3 >Carrito de Compras</h3></div>
+                    <div class="cart__btn"><button type="button" class=" btn--close">
                       <i class='bx bx-x'></i>
                     </button>
                   </div>
-                  <div class="cart__body">
-                    <div class="cart__empty">
-                      <i class='bx bx-cart'></i>
-                      <p class="cart__empty--text">No hay productos en el carrito</p>
-                    </div>
                   </div>
+                 <div class="container-tarjetas">
+                  <div class="tarjeta_container">
+                    <div class="c imagen_cart"> <span><img  src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png"alt="name" class="camisete"></span></div>
+                    <div class="c product_name"><span><h3>producto nombre</h3></span></div>
+                    <div class="c product_precio"><span>$17</span></div>
+                    <div class="c symbols">
+                     <button><i class='bx bx-plus'></i></button>
+                     <span class="qty">0</span>
+                     <button><i class='bx bx-minus' ></i></button>
+                    </div> 
+                    <div class="c product_trash"><button><i class='bx bx-trash' ></i></button></div>
+                 </div>
+         
+                 <div class="cart__empty">
+                  <i class='bx bx-cart'></i>
+                  <p class="cart__empty--text">No hay productos en el carrito</p>
+                </div>
+                </div>
+
                   <div class="cart__footer">
                     <div class="cart__count">
                       <span class="cart__count--text">Articulos</span>
@@ -262,9 +231,11 @@
                       <span class="cart__count--text">Total</span>
                       <span class="cart__count--item">$0</span>
                     </div>
-                    <button type="button" class="cart__btn btn--buy">
+
+
+                    <div class="cart__comprar"><button type="button" class="cart__btn btn--buy">
                       Comprar
-                    </button>
+                    </button></div>
                   </div>
                 </div>
               </div>
