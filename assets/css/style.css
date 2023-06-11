@@ -57,10 +57,10 @@
 
   .dark_theme{
     --primary-color: hsl(354, 48%, 83%);
-    --body-color: hsl(0, 5%, 29%);
+    --body-color: hsl(0, 0%, 0%);
     --text-color: hsl(0, 96%, 11%);
     --title-color: hsl(0, 93%, 5%);
-    --bg-color: hsl(0, 81%, 44%);
+    --bg-color: hsl(354, 78%, 60%);
     --card-color: hsl(0, 13%, 81%);
    /* transition: all 1s ease-in;*/
    transition: background-color  1s ease-in-out;
@@ -320,6 +320,7 @@
   .nav_link:hover {
       color: var(--primary-color);
       transform: scale(1.1);
+      transform: translatex(-15px);
   }
   
   .nav_buttons {
@@ -346,16 +347,17 @@
  
 
 .rot:hover{
-animation: rotation 1s  ease-in-out ; 
+animation: rotation .5s  ease-in-out; 
 }
 
 @keyframes rotation {
   0%{
-   transform: rotate(1.8turn);
+   transform: rotate(.5turn);
   }
   100%{
-transform: rotate(.8turn);
+    transform: scale(.5);
   }
+
 }
 
   .notify {
@@ -426,7 +428,8 @@ transform: rotate(.8turn);
   border-radius: 10px;
   box-shadow: 0 0 25px hsla(0, 0%, 0%, 10%);
   padding: 50px;
-  
+  overflow: hidden;
+  z-index: var(--z-fixed);
 }
 
 .product{
@@ -436,15 +439,20 @@ transform: rotate(.8turn);
   overflow: hidden;
 }
 
-.product img:hover{
+.products__container:hover .product img{
   transition: transform, backfround-image .3s ease-in-out;
   transform:  translateY(-10px);
   background-image: linear-gradient(rgba(10, 10, 10), rgba(250, 250, 255));
-
+  
 }
 
+.products__container:hover .product__content{
+  transform:  translateY(-100px);
+}
 
-
+.products__container:hover{
+  transform: scale(1);
+}
 .product__content {
   position: relative;
   display: grid;
@@ -465,12 +473,14 @@ transform: rotate(.8turn);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   transform: translateY(-50%);
+  z-index: var(--z-modal);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.25rem;
   transition: background-color .3s ease-in-out,
               color .3s ease-in-out;
+  overflow: visible;
 }
 
 .product__btn:hover {
@@ -481,22 +491,46 @@ transform: rotate(.8turn);
 
 
 
-.product__price {
+/* .product__price {
   margin-left: 0%;
   grid-column: span 1;
 }
 
 .product__stock {
-  margin-left: 60%;
+  position: absolute;
   grid-column: span 2;
+  right: 10px;
 }
 
 .product__title {
   grid-column:  span 3;
   text-align: center;
+} */
+
+.container_grid{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto auto;
+  width: 100%;
 }
-
-
-
+.c{
+  display: flex;
+  padding: 5px;
+  
+}
+.c1{
+  grid-row: 1 / span1;
+}
+.c2{
+  justify-content: flex-end;
+}
+.c3{
+  grid-column: 1 / span2 ;
+  justify-content: center;
+  align-items: center;
+}
+.c4{
+  grid-column: 1/ span2;
+}
 
 
