@@ -1,7 +1,7 @@
  function products (products) {
      const db = [...products]
 
-     function Prtproducts(products){
+     function printProducts(products){
           const productsDom = document.querySelector('.products__container')
           let htmlProduct = ''
 
@@ -13,7 +13,7 @@
                
                <div class="product__content">
                  <div class="container_desc">
-                 <button onclick=addCart("${product.id}") type="button" class="product__btn add--to--cart" >
+                 <button type="button" class="product__btn add--to--cart" data-id"${product.id}" >
                    <i class='bx bx-cart-add'></i>
                  </button>
                  <div class="prod__container">
@@ -46,23 +46,10 @@
           }
           productsDom.innerHTML = htmlProduct
      }
-     let carrito = []
-
-let notify = document.querySelector('.notify')
-
-function addCart(id) {
-    let prduct = db.filter(item => {
-        return item.id === id
-    });
-    if(prduct){
-        carrito.push(prduct)
-    }
-    notify.innerHTML = carrito.length
-}
-     Prtproducts()
+     printProducts()
      return {
           db,
-          Prtproducts
+          printProducts
      }
      
     }

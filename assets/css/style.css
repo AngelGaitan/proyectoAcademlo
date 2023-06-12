@@ -423,8 +423,8 @@ transform: rotate(.8turn);
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      opacity: 1;
-      visibility: visible;
+      opacity: 0;
+      visibility: hidden;
       transition: opacity .3s ease-in-out,
                   visibility .3s ease-in-out;
   }  
